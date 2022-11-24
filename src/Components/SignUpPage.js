@@ -140,7 +140,8 @@ const Wrapper = styled.div`
         
     }
 
-    h2{
+    h2{ 
+        font-family: 'MedievalSharp', cursive;
         font-size: 20px;
         opacity: 0.5;
         font-weight: 600;
@@ -148,13 +149,13 @@ const Wrapper = styled.div`
     
  `
 
-const LogoTop = styled.div`
+const LogoTop = styled.h1`
    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #6139FF;
-    font-family: 'MedievalSharp', cursive;
+    font-family: 'UnifrakturCook', cursive;
     font-size: 40px;
     font-weight: 900;
     opacity: 0.8

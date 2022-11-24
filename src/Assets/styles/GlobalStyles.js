@@ -59,6 +59,7 @@ a {
 
 body {
 	font-family: 'Saira Stencil One', cursive;
+	font-family: 'UnifrakturCook', cursive;
   background-color: #ffffff;
 }
 }`;

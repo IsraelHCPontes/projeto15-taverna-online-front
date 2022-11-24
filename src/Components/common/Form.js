@@ -47,7 +47,7 @@ font-family: 'MedievalSharp', cursive;
 
         input::placeholder{
             
-            font-family: 'Saira Stencil One', cursive;
+            font-family: 'MedievalSharp', cursive;
             font-style: normal;
             font-weight: 400;
             font-size: 15px;
