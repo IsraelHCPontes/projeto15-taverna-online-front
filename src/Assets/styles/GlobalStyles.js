@@ -63,7 +63,7 @@ a {
 }
 
 body {
-
+	font-family: 'Sketch Gothic School';
   background-color: #ffffff;
 }
 }`;
