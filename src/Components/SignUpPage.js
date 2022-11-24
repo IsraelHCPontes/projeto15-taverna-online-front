@@ -151,21 +151,15 @@ const Wrapper = styled.div`
  `
 
 const LogoTop = styled.h1`
-@font-face {
-  font-family: 'Sketch Gothic School';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Sketch Gothic School'), url('../Assets/styles/Sketch Gothic School.ttf') format('ttf');
-}
+
    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #6139FF;
-    font-family: 'Sketch Gothic School';
+    font-family: 'Sketch-Gothic-School';
     font-size: 50px;
-    font-weight: 450
-    ;
+    font-weight: 450;
     opacity: 0.8
 `
 
