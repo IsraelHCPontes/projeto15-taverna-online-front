@@ -57,11 +57,13 @@ a {
   box-sizing: border-box;
 }
 
-body {
-	@font-face {
+@font-face {
   font-family: 'Sketch Gothic School';
-  src: url('Sketch Gothic School.ttf') format('truetype');
+  src: url('./Assets/styles/Sketch Gothic School.ttf') format('truetype');
 }
+
+body {
+
   background-color: #ffffff;
 }
 }`;

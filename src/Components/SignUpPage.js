@@ -156,7 +156,7 @@ const LogoTop = styled.h1`
     justify-content: center;
     color: #6139FF;
     font-family: 'Sketch Gothic School';
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 450
     ;
     opacity: 0.8
