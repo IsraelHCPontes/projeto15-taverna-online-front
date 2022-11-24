@@ -36,7 +36,8 @@ const ButtonFacke =styled.div`  height: 45px;
         align-items: center;
         opacity: 0.7;
 
-        font-family: Lexend Deca;
+        
+        font-family: 'Saira Stencil One', cursive;
         font-size: 21px;
         font-weight: 400;
         line-height: 26px;

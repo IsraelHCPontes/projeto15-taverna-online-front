@@ -1,4 +1,4 @@
-import '../App.css';
+
 import SingUpPage from './SignUpPage';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import GlobalStyle from "../Assets/styles/GlobalStyles"
