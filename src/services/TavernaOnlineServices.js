@@ -3,7 +3,7 @@ import axios from 'axios';
 const BASE_URL = 'http://localhost:5001'
 
 function creatHeaders(){
-  const auth = JSON.parse(localStorage.getItem("myWallet"));
+  const auth = JSON.parse(localStorage.getItem("tavernaOnline"));
   console.log('ciracao', auth.token)
   const config ={
     headers:{
