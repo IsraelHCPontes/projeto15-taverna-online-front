@@ -59,11 +59,11 @@ a {
 
 @font-face {
   font-family: 'Sketch Gothic School';
-  src: url('Sketch Gothic School.ttf') format('Normal');
+  src: local('Sketch Gothic School'), url('./Sketch Gothic School.ttf') format('tff');
 }
 
 body {
-	font-family: 'Sketch Gothic School';
+
   background-color: #ffffff;
 }
 }`;
