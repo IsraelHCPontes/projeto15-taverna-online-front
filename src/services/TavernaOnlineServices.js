@@ -3,7 +3,7 @@ import axios from 'axios';
 const BASE_URL = 'https://taverna-online-api.onrender.com'
 
 function creatHeaders(){
-  const auth = JSON.parse(localStorage.getItem("myWallet"));
+  const auth = JSON.parse(localStorage.getItem("tavernaOnline"));
   console.log('ciracao', auth.token)
   const config ={
     headers:{
