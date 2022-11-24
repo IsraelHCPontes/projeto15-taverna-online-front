@@ -59,7 +59,7 @@ a {
 
 @font-face {
   font-family: 'Sketch Gothic School';
-  src: url('./src/Assets/styles/Sketch Gothic School.ttf') format('truetype');
+  src: url('src/Assets/styles/Sketch Gothic School.ttf') format('Normal');
 }
 
 body {
