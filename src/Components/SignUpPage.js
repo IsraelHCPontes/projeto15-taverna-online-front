@@ -5,6 +5,7 @@ import Form from "./common/Form"
 import {Button} from './common/Button'
 import { postSignUp} from "../services/TavernaOnlineServices"
 
+
 export default function SingUpPage(){
 
     const [loading, setLoading] = useState(false)
@@ -150,10 +151,11 @@ const Wrapper = styled.div`
  `
 
 const LogoTop = styled.h1`
-
 @font-face {
   font-family: 'Sketch Gothic School';
-  src: url('../Assets/styles/Sketch Gothic School.ttf') format('Normal');
+  font-style: normal;
+  font-weight: normal;
+  src: local('Sketch Gothic School'), url('../Assets/styles/Sketch Gothic School.ttf') format('ttf');
 }
    display: flex;
     flex-direction: column;
