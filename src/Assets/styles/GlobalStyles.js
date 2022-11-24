@@ -60,10 +60,10 @@ a {
 
 body {
 @font-face {
-  font-family: 'Sketch Gothic School';
+  font-family: "Sketch Gothic School";
   font-style: normal;
   font-weight: normal;
-  src: local('Sketch Gothic School'), url('./Sketch Gothic School.ttf') format('ttf');
+  src: local('Sketch Gothic School'), url("./Sketch Gothic School.ttf") format("ttf");
 }
 
   background-color: #ffffff;
