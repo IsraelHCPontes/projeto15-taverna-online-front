@@ -136,7 +136,7 @@ const Wrapper = styled.div`
     justify-content: center;
 
     input{
-        font-family: 'Saira Stencil One', cursive;
+        font-family: 'MedievalSharp', cursive;
         
     }
 
@@ -154,14 +154,14 @@ const LogoTop = styled.div`
     align-items: center;
     justify-content: center;
     color: #6139FF;
-    font-family: 'Saira Stencil One', cursive;
+    font-family: 'MedievalSharp', cursive;
     font-size: 40px;
     font-weight: 900;
     opacity: 0.8
 `
 
 const RodaPe = styled.h3`
-   font-family: 'Raleway', sans-serif;
+    font-family: 'MedievalSharp', cursive;
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;

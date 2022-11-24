@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Form = styled.form`
 
-        font-family: 'Saira Stencil One', cursive;
+font-family: 'MedievalSharp', cursive;
         margin-top: 40px;
         border-radius: 3px;
         display: flex;
@@ -31,7 +31,7 @@ const Form = styled.form`
             border: 1px solid #D5D5D5;
             border-radius: 3px;
             
-            font-family: 'Saira Stencil One', cursive;
+            font-family: 'MedievalSharp', cursive;
             font-size: 20px;
             font-weight: 400;
             line-height: 25px;
