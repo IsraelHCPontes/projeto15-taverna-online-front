@@ -1,11 +1,16 @@
-import logo from '../logo.svg';
 import '../App.css';
+import SingUpPage from './SignUpPage';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import GlobalStyle from "../Assets/styles/GlobalStyles"
 
 function App() {
   return (
-        <>
-          <h1>CODA AQUI AS PAGES</h1>;
-        </>
+        <BrowserRouter>
+         <GlobalStyle/>
+            <Routes>
+               <Route path="/sign-up" element={<SingUpPage/>}/>
+            </Routes>
+        </BrowserRouter>
   );
 }
 
