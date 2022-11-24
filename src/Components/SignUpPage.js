@@ -60,7 +60,7 @@ export default function SingUpPage(){
     return (
         <Wrapper>
             <LogoTop>
-                 Tverna Online
+                 Taverna Online
             </LogoTop>
 
             <h2>Crie uma conta</h2>
@@ -155,9 +155,10 @@ const LogoTop = styled.h1`
     align-items: center;
     justify-content: center;
     color: #6139FF;
-    font-family: 'UnifrakturCook', cursive;
+    font-family: 'Sketch Gothic School';
     font-size: 40px;
-    font-weight: 900;
+    font-weight: 450
+    ;
     opacity: 0.8
 `
 
