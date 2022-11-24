@@ -58,8 +58,10 @@ a {
 }
 
 body {
-	font-family: 'Saira Stencil One', cursive;
-	font-family: 'UnifrakturCook', cursive;
+	@font-face {
+  font-family: 'Sketch Gothic School';
+  src: url('Sketch Gothic School.ttf') format('truetype');
+}
   background-color: #ffffff;
 }
 }`;
