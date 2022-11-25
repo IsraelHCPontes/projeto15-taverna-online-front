@@ -5,7 +5,8 @@ import Form from "./common/Form"
 import {Button} from './common/Button'
 import { postSignUp} from "../services/TavernaOnlineServices"
 
-export default function SingUpPage(){
+
+export default function SignUpPage(){
 
     const [loading, setLoading] = useState(false)
     const [disabled, setDesibled] = useState(false)
@@ -60,7 +61,7 @@ export default function SingUpPage(){
     return (
         <Wrapper>
             <LogoTop>
-                 Tverna Online
+                 Taverna Online
             </LogoTop>
 
             <h2>Crie uma conta</h2>
@@ -136,11 +137,12 @@ const Wrapper = styled.div`
     justify-content: center;
 
     input{
-        font-family: 'Saira Stencil One', cursive;
+        font-family: 'MedievalSharp', cursive;
         
     }
 
-    h2{
+    h2{ 
+        font-family: 'MedievalSharp', cursive;
         font-size: 20px;
         opacity: 0.5;
         font-weight: 600;
@@ -148,20 +150,22 @@ const Wrapper = styled.div`
     
  `
 
-const LogoTop = styled.div`
+const LogoTop = styled.h1`
+
+
    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #6139FF;
-    font-family: 'Saira Stencil One', cursive;
-    font-size: 40px;
-    font-weight: 900;
+    font-family: 'Sketch-Gothic-School';
+    font-size: 50px;
+    font-weight: 450;
     opacity: 0.8
 `
 
 const RodaPe = styled.h3`
-   font-family: 'Raleway', sans-serif;
+    font-family: 'MedievalSharp', cursive;
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
