@@ -56,9 +56,12 @@ a {
 * {
   box-sizing: border-box;
 }
+@font-face {
+  font-family: Sketch-Gothic-School;
+  src: url(/Sketch-Gothic-School.ttf) ;
+}
 
 body {
-	font-family: 'Saira Stencil One', cursive;
   background-color: #ffffff;
 }
 }`;

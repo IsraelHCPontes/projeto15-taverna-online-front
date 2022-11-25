@@ -12,7 +12,7 @@ const Button  = styled.button`
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: 'Saira Stencil One', cursive;
+        font-family: 'MedievalSharp', cursive;
         font-size: 20px;
         font-weight: 700;
         line-height: 23px;
@@ -36,7 +36,8 @@ const ButtonFacke =styled.div`  height: 45px;
         align-items: center;
         opacity: 0.7;
 
-        font-family: Lexend Deca;
+        
+        font-family: 'MedievalSharp', cursive;
         font-size: 21px;
         font-weight: 400;
         line-height: 26px;

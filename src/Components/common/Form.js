@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Form = styled.form`
 
+font-family: 'MedievalSharp', cursive;
         margin-top: 40px;
         border-radius: 3px;
         display: flex;
@@ -29,7 +30,8 @@ const Form = styled.form`
            
             border: 1px solid #D5D5D5;
             border-radius: 3px;
-            font-family: Lexend Deca;
+            
+            font-family: 'MedievalSharp', cursive;
             font-size: 20px;
             font-weight: 400;
             line-height: 25px;
@@ -45,7 +47,7 @@ const Form = styled.form`
 
         input::placeholder{
             
-            font-family: 'Saira Stencil One', cursive;
+            font-family: 'MedievalSharp', cursive;
             font-style: normal;
             font-weight: 400;
             font-size: 15px;
