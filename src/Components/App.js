@@ -1,5 +1,6 @@
 import '../App.css';
 import SignUpPage from './SignUpPage';
+import SignInPage from './SignInPage';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import GlobalStyle from "../Assets/styles/GlobalStyles"
 
