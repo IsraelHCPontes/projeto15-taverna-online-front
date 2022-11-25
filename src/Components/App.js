@@ -1,5 +1,5 @@
 
-import SingUpPage from './SignUpPage';
+import SignUpPage from './SignUpPage';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import GlobalStyle from "../Assets/styles/GlobalStyles"
 
@@ -8,7 +8,7 @@ function App() {
         <BrowserRouter>
          <GlobalStyle/>
             <Routes>
-               <Route path="/sign-up" element={<SingUpPage/>}/>
+               <Route path="/sign-up" element={<SignUpPage/>}/>
             </Routes>
         </BrowserRouter>
   );

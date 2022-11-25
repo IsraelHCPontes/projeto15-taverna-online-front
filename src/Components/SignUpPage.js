@@ -6,7 +6,7 @@ import {Button} from './common/Button'
 import { postSignUp} from "../services/TavernaOnlineServices"
 
 
-export default function SingUpPage(){
+export default function SignUpPage(){
 
     const [loading, setLoading] = useState(false)
     const [disabled, setDesibled] = useState(false)
@@ -151,6 +151,7 @@ const Wrapper = styled.div`
  `
 
 const LogoTop = styled.h1`
+
 
    display: flex;
     flex-direction: column;
