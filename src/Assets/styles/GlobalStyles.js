@@ -62,7 +62,7 @@ a {
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #ededed;
 }
 }`;
 
