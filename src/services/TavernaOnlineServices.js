@@ -20,14 +20,21 @@ function postSignIn(body) {
     const promise = axios.post(`${BASE_URL}/sign-in`,body);
     return promise;
   }
-  
-  function postSignUp(body){
+
+function postSignUp(body){
       const promise = axios.post(`${BASE_URL}/sign-up`, body)
       return promise;
   }
+
+function getCart(){
+  const config = creatHeaders();
+  const promise = axios.post(`${BASE_URL}/cart`, config)
+  return promise;
+}  
 
 
 export {
     postSignIn,
     postSignUp,
+    getCart
  };

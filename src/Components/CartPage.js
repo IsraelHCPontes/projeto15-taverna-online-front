@@ -1,7 +1,24 @@
 import styled from "styled-components"
 import product from '../Assets/img/Rectangle 20.png';
+import { useEffect } from "react";
+import { getCart } from "../services/TavernaOnlineServices";
+
 
 export default function CartPage(){
+    const cart = [];
+
+    useEffect(() => {
+        async function GetCart(){
+            try{
+                const res = await getCart();
+                cart = res.data
+                console.log(res.data, cart)
+            }catch({response}){
+                console.log(response)
+            }
+        }
+        GetCart();
+    }, []);
 
     function Product(){
         return(
@@ -23,8 +40,6 @@ export default function CartPage(){
         )
     }
 
-
-
     return(
         <Wrapper>
             <Amount>3 Itens</Amount>
@@ -39,7 +54,6 @@ export default function CartPage(){
         </Wrapper>
     )
 }
-
 
 const Wrapper = styled.div`
     width: 343px;
