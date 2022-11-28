@@ -1,22 +1,58 @@
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import styled from "styled-components";
 import ProductList from "./ProductList";
+import { AuthContext } from "../contexts/auth";
+
+import { BASE_URL } from "../../services/TavernaOnlineServices";
 
 import userImage from "../../Assets/img/defaultUser.png";
 import homeImage from "../../Assets/img/home.png";
 import cartImage from "../../Assets/img/cart.png";
 import loginImage from "../../Assets/img/loginUser.png";
+import lougoutImage from "../../Assets/img/logout.png";
 
 export default function MainPage(){
+
+    const {user, setUser, isLoggedIn, setIsLoggedIn, config} = useContext(AuthContext);
+
+    function logout() {
+        setUser({});
+        setIsLoggedIn(false);
+    }
+
+    function getUser(user) {
+        console.log(user.data);
+        setUser(user.data);
+        setIsLoggedIn(true);
+    }
+
+    useEffect(() => {
+        const request = axios.get(`${BASE_URL}/user`, config);
+		request.then(response => getUser(response));
+    }, []);
 
     return (
         <>
             <Header>
-                <img src={userImage} alt="user"></img>
-                <div>
-                    <p>Faça login para </p>
-                    <h1>ver a sua conta!</h1>
-                </div>
+                {isLoggedIn ?
+                    <>
+                        <img src={user.image} alt="user"></img>
+                        <div>
+                            <p>Olá!</p>
+                            <h1>{user.name}</h1>
+                        </div>
+                    </>
+                :
+                    <>
+                        <img src={userImage} alt="user"></img>
+                        <div>
+                            <p>Faça login para</p>
+                            <h1>ver a sua conta!</h1>
+                        </div>
+                    </>
+                }
             </Header>
             <List>
                 <ProductList />
@@ -35,10 +71,22 @@ export default function MainPage(){
                     </Link>
                 </div>
                 <div>
-                    <Link to={'/sign-in'}>
-                        <img src={loginImage} alt="login"></img>
-                        <p>Login</p>
-                    </Link>
+                    {isLoggedIn ? 
+                        <>
+                            <img
+                                src={lougoutImage}
+                                alt="logout"
+                                onClick={logout()}
+                            >
+                            </img>
+                            <p>Logout</p>
+                        </>
+                    :
+                        <Link to={'/sign-in'}>
+                            <img src={loginImage} alt="login"></img>
+                            <p>Login</p>
+                        </Link>
+                    }
                 </div>
             </Footer>
         </>

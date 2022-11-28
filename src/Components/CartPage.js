@@ -38,11 +38,6 @@ export default function CartPage(){
                     <NameProduct>{product.name}</NameProduct>
                     <AmountProduct>{product.amount}x</AmountProduct>
                     <ValueProduct>${product.price}</ValueProduct>
-                    <ButtonsAmount>
-                        <button>+</button>
-                        <h4>{product.amount}</h4>
-                        <button>-</button>
-                     </ButtonsAmount>
             </ProductDatas>
         </ContainerPorduct>)})
         

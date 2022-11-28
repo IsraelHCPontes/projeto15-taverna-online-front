@@ -34,6 +34,7 @@ function getCart(body){
 
 
 export {
+    BASE_URL,
     postSignIn,
     postSignUp,
     getCart
