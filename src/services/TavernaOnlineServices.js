@@ -1,9 +1,8 @@
 import axios from 'axios';
 
-const BASE_URL = "taverna-online-api.onrender.com"
+const BASE_URL = 'https://taverna-online-api.onrender.com'
 
- //taverna-online-api.onrender.com
-
+ //taverna-online-api.onrender.comgit
 function creatHeaders(){
   const auth = JSON.parse(localStorage.getItem("tavernaOnline"));
   console.log('ciracao', auth.token)
