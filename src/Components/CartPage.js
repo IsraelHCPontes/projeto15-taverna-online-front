@@ -3,7 +3,6 @@ import product from '../Assets/img/Rectangle 20.png';
 import { useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { getCart } from "../services/TavernaOnlineServices";
-import { useNavigate } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 
 export default function CartPage(){
