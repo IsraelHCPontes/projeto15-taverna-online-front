@@ -1,27 +1,25 @@
 import styled from "styled-components"
-import product from '../Assets/img/Rectangle 20.png';
 import { useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { getCart } from "../services/TavernaOnlineServices";
+import { getCart } from "../../services/TavernaOnlineServices";
 
-
-export default function CartPage(){
-    const [cart, setCart] = useState([])
+export default function CheckoutPage(){
+    const [checkout, setCheckout] = useState([])
     const navigate = useNavigate();
 
     let itens = 0
     let valorTotal = 0
      
-    cart.forEach(({amount}) => itens = Number(itens) + Number(amount))
-    cart.forEach(({price}) => valorTotal = Number(valorTotal) + Number(price))
+    checkout.forEach(({amount}) => itens = Number(itens) + Number(amount))
+    checkout.forEach(({price}) => valorTotal = Number(valorTotal) + Number(price))
     
 
     useEffect(() => {
         async function fetchData(){
             try{
                 const res = await getCart();
-                setCart(res.data)
-                console.log('dentrem', cart)
+                setCheckout(res.data)
+                console.log('dentrem', checkout)
             }catch(error){
                 console.log(error)
             }
@@ -30,7 +28,7 @@ export default function CartPage(){
     }, []);
 
     function Product(){
-        return cart.map(product =>{
+        return checkout.map(product =>{
             return (
             <ContainerPorduct>
                 <ContainerImg>s
@@ -38,13 +36,7 @@ export default function CartPage(){
                 </ContainerImg>
                 <ProductDatas>
                     <NameProduct>{product.name}</NameProduct>
-                    <AmountProduct>{product.amount}x</AmountProduct>
                     <ValueProduct>${product.price}</ValueProduct>
-                    <ButtonsAmount>
-                        <button>+</button>
-                        <h4>{product.amount}</h4>
-                        <button>-</button>
-                     </ButtonsAmount>
             </ProductDatas>
         </ContainerPorduct>)})
         
@@ -52,14 +44,13 @@ export default function CartPage(){
 
     return(
         <Wrapper>
-            <Amount>{itens} Itens</Amount>
-            <TextoCart>Carrinho de compras</TextoCart>
+            <TextoCart>Compra realizada com sucesso!</TextoCart>
                 <ContainerPorducts>
                   <Product/>
                 </ContainerPorducts>
+                <Price>Total: R${valorTotal}</Price>
                 <Footer>
-                    <h2>Total: R${valorTotal}</h2>
-                    <button onClick={() => navigate('/checkout')}>checkout</button>
+                    <button onClick={() => navigate('/')}>Voltar ao menu</button>
                 </Footer>
         </Wrapper>
     )
@@ -98,7 +89,6 @@ const Amount = styled.h3`
     height: 18px;
     left: 285px;
     top: 57px;
-
 `
 
 const ContainerPorducts = styled.div`
@@ -121,6 +111,19 @@ const ContainerPorduct = styled.div`
     position: relative;
     box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.20);
 `
+
+const Price = styled.h2`
+    padding-top: 100px;
+    padding-right: 140px;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0em;
+    color: #535353;
+    text-align: left; 
+`
+
 const ContainerImg = styled.div`
     width: 150px;
     height: 120px;
@@ -136,8 +139,7 @@ const ProductDatas = styled.div`
     border-radius: 5px;
     overflow: hidden;  
 `
-const ContainerAmount = styled.div`
-`
+
 const NameProduct = styled.h2`
     padding-top: 12px;
     font-family: MedievalSharp;
@@ -146,7 +148,6 @@ const NameProduct = styled.h2`
     line-height: 20px;
     letter-spacing: -0.23999999463558197px;
     text-align: left;
-
 `
 
 const AmountProduct = styled.h4`
@@ -190,15 +191,11 @@ const ButtonsAmount = styled.div`
 
 
 const Footer = styled.div`
-        position: fixed;
         bottom: 0;
         right: 0;
         min-width: 100%;
-        height: 56px;
-        padding: 10px 16px;
-        background: #ffffff;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         font-size: 22px;
         font-family: 'MedievalSharp', cursive;
@@ -207,19 +204,13 @@ const Footer = styled.div`
         z-index: 1;
 
         button{
-            margin-right:15px;
-            height: 35px;
-            width: 135px;
-            left: 232px;
-            top: 769px;
-            border-radius: 3px;
-            padding: 13px 30px 13px 30px;
+            height: 40px;
+            width: 343px;
             border:none;
             background: #6139FF;
             display: flex;
             align-items: center;
             justify-content: center;
-
 
             font-family: MedievalSharp;
             font-size: 20px;
