@@ -38,9 +38,6 @@ function getDataUser(body){
   return promise;
 };
 
-
-
-
 export {
   BASE_URL,
     postSignIn,

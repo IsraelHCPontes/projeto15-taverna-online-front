@@ -4,8 +4,6 @@ import { useEffect, useState} from "react";
 import { getCart } from "../services/TavernaOnlineServices";
 import { useNavigate } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
- 
-
 
 export default function CartPage(){
     const [cart, setCart] = useState([])
@@ -42,6 +40,11 @@ export default function CartPage(){
                     <NameProduct>{product.name}</NameProduct>
                     <AmountProduct>{product.amount}x</AmountProduct>
                     <ValueProduct>${product.price}</ValueProduct>
+                    <ButtonsAmount>
+                        <button>+</button>
+                        <h4>{product.amount}</h4>
+                        <button>-</button>
+                     </ButtonsAmount>
             </ProductDatas>
         </ContainerPorduct>)})
         
