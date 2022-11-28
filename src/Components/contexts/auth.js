@@ -5,6 +5,9 @@ export const AuthContext = createContext({});
 
 export default function AuthProvider({children}) {
 
+    const [user, setUser] = useState({});
+    const [token, setToken] = useState();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -16,7 +19,7 @@ export default function AuthProvider({children}) {
 	}, []);
 
     return (
-        <AuthContext.Provider value={{ products }}>
+        <AuthContext.Provider value={{ user, setUser, token, setToken, isLoggedIn, setIsLoggedIn, products }}>
             {children}
         </AuthContext.Provider>
     )
