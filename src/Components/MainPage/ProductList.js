@@ -26,13 +26,14 @@ export default function MainPage(){
             productToAdd
         );
         request.then(() => navigate('cart'));
+        request.catch(() => alert("Produto já está no carrinho!"));
     }
 
     return (
         <>
             {products?.map(product =>
-                <Product key={product.id}>
-                    <Link to={`/${product.id}`}>
+                <Product key={product._id}>
+                    <Link to={`/${product._id}`}>
                         <img src={product.image} alt={product.title} />                      
                     </Link>
                     <LowerDiv>
