@@ -15,27 +15,22 @@ import lougoutImage from "../../Assets/img/logout.png";
 
 export default function MainPage(){
 
-    const {user, setUser, token, isLoggedIn, setIsLoggedIn} = useContext(AuthContext);
+    const {user, setUser, isLoggedIn, setIsLoggedIn, config} = useContext(AuthContext);
 
     function logout() {
         setUser({});
         setIsLoggedIn(false);
     }
 
-    const config = {
-        headers: {
-            "Authorization": `Bearer ${token}`
-        }
+    function getUser(user) {
+        console.log(user.data);
+        setUser(user.data);
+        setIsLoggedIn(true);
     }
-    
 
     useEffect(() => {
         const request = axios.get(`${BASE_URL}/user`, config);
-		
-		request.then(response => {
-			setUser(response.data);
-            setIsLoggedIn(true);
-		});
+		request.then(response => getUser(response));
     }, []);
 
     return (
