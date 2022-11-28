@@ -28,6 +28,7 @@ function postSignIn(body) {
 
 
 export {
+    BASE_URL,
     postSignIn,
     postSignUp,
  };

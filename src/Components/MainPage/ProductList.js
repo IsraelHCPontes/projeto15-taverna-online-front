@@ -1,14 +1,32 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import styled from "styled-components";
 
 import { AuthContext } from "../contexts/auth";
+import { BASE_URL } from "../../services/TavernaOnlineServices";
 
 import whiteCart from "../../Assets/img/whiteCart.png";
 
 export default function MainPage(){
 
+    const navigate = useNavigate();
+
     const {products} = useContext(AuthContext);
+
+    function addToCart(product) {
+        let productToAdd = {
+            name:  product.name,
+            price: product.price,
+            image: product.image,
+            quantity: product.quantity
+        };
+        const request = axios.post(
+            `${BASE_URL}/cart`,
+            productToAdd
+        );
+        request.then(() => navigate('cart'));
+    }
 
     return (
         <>
@@ -22,7 +40,7 @@ export default function MainPage(){
                             <h1>{product.name}</h1>
                             <p>${product.price}</p>
                         </div>
-                        <button>
+                        <button onClick={() => addToCart(product)}>
                             <img src={whiteCart} alt="cart"></img>
                         </button>
                     </LowerDiv>

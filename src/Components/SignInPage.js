@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Link,useNavigate} from "react-router-dom"
 import styled from "styled-components"
+import { AuthContext } from "./contexts/auth"
 import Form from "./common/Form"
 import {Button} from './common/Button'
 import { postSignUp, postSignIn} from "../services/TavernaOnlineServices"
@@ -10,6 +11,8 @@ export default function SignInPage(){
 
     const [loading, setLoading] = useState(false)
     const [disabled, setDesibled] = useState(false)
+
+    const {setToken} = useContext(AuthContext);
 
     const navigate = useNavigate()
 
@@ -39,7 +42,8 @@ export default function SignInPage(){
         setDesibled(true)
 
         try{
-            const response = await postSignIn(body)
+            const response = await postSignIn(body);
+            setToken(response.data.token);
             console.log('deu bom', response);
             navigate('/');
              setForm({ 
