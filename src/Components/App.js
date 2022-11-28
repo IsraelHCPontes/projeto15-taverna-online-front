@@ -2,6 +2,7 @@ import AuthProvider from "./contexts/auth";
 import MainPage from './MainPage/MainPage';
 import ProductPage from './ProductPage/ProductPage';
 import CartPage from './CartPage';
+import CheckoutPage from './CheckoutPage/CheckoutPage';
 import SignUpPage from './SignUpPage';
 import SignInPage from './SignInPage';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
@@ -17,6 +18,7 @@ function App() {
                   <Route path="/" element={<MainPage />}/>
                   <Route path="/:idProduct" element={<ProductPage/>}/>
                   <Route path="/cart" element={<CartPage/>}/>
+                  <Route path="/checkout" element={<CheckoutPage/>}/>
                   <Route path="/sign-up" element={<SignUpPage/>}/>
                   <Route path="/sign-in" element={<SignInPage/>}/>
                </Routes>
