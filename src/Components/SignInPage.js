@@ -46,8 +46,7 @@ export default function SignInPage(){
             setToken(response.data.token);
             console.log('deu bom', response);
             localStorage.setItem('tavernaOnline', JSON.stringify({token: response.data.token}));
-            const auth = JSON.parse(localStorage.getItem("tavernaOnline"));
-            console.log('login', auth.token)
+          
             navigate('/');
              setForm({ 
                 email: '',
