@@ -1,21 +1,19 @@
 import { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 import ProductList from "./ProductList";
 import { AuthContext } from "../contexts/auth";
-
-import { BASE_URL } from "../../services/TavernaOnlineServices";
-
 import userImage from "../../Assets/img/defaultUser.png";
 import homeImage from "../../Assets/img/home.png";
 import cartImage from "../../Assets/img/cart.png";
 import loginImage from "../../Assets/img/loginUser.png";
 import lougoutImage from "../../Assets/img/logout.png";
+import { getDataUser } from "../../services/TavernaOnlineServices";
 
 export default function MainPage(){
-
-    const {user, setUser, isLoggedIn, setIsLoggedIn, config} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const {user, setUser, isLoggedIn, setIsLoggedIn} = useContext(AuthContext);
 
     function logout() {
         setUser({});
@@ -25,13 +23,24 @@ export default function MainPage(){
     function getUser(user) {
         console.log(user.data);
         setUser(user.data);
-        setIsLoggedIn(true);
     }
 
     useEffect(() => {
-        const request = axios.get(`${BASE_URL}/user`, config);
-		request.then(response => getUser(response));
+        async function fetchData(){
+            try{
+                const res = await getDataUser();
+                getUser(res)
+                setIsLoggedIn(true)
+                setUser(res.data)
+                console.log('mainPage',user)
+            }catch(error){
+                console.log(error)
+            }
+        }
+        fetchData();
     }, []);
+   
+    console.log('mainforaPage', isLoggedIn)
 
     return (
         <>
@@ -76,7 +85,7 @@ export default function MainPage(){
                             <img
                                 src={lougoutImage}
                                 alt="logout"
-                                onClick={logout()}
+                                onClick={() =>logout()}
                             >
                             </img>
                             <p>Logout</p>

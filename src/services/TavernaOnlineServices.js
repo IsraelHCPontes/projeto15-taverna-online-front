@@ -32,10 +32,19 @@ function getCart(body){
   return promise;
 };
 
+function getDataUser(body){
+  const config = creatHeaders();
+   const promise = axios.get(`${BASE_URL}/user`, config)
+  return promise;
+};
+
+
+
 
 export {
-    BASE_URL,
+  BASE_URL,
     postSignIn,
     postSignUp,
-    getCart
+    getCart,
+    getDataUser
  };
