@@ -1,54 +1,62 @@
 import styled from "styled-components"
 import product from '../Assets/img/Rectangle 20.png';
-import { useEffect } from "react";
+import { useEffect, useState} from "react";
 import { getCart } from "../services/TavernaOnlineServices";
 
 
 export default function CartPage(){
-    const cart = [];
+    const [cart, setCart] = useState([])
+
+    let itens = 0
+    let valorTotal = 0
+     
+    cart.forEach(({amount}) => itens = Number(itens) + Number(amount))
+    cart.forEach(({price}) => valorTotal = Number(valorTotal) + Number(price))
+    
 
     useEffect(() => {
-        async function GetCart(){
+        async function fetchData(){
             try{
                 const res = await getCart();
-                cart = res.data
-                console.log(res.data, cart)
-            }catch({response}){
-                console.log(response)
+                setCart(res.data)
+                console.log('dentrem', cart)
+            }catch(error){
+                console.log(error)
             }
         }
-        GetCart();
+        fetchData();
     }, []);
 
     function Product(){
-        return(
+        return cart.map(product =>{
+            return (
             <ContainerPorduct>
-                <ContainerImg>
-                    <img src={product} alt="" />
+                <ContainerImg>s
+                    <img src={product.image} alt="" />
                 </ContainerImg>
                 <ProductDatas>
-                    <NameProduct>Love letter(2 Edição)</NameProduct>
-                    <AmountProduct>3x</AmountProduct>
-                    <ValueProduct>$79.99</ValueProduct>
+                    <NameProduct>{product.name}</NameProduct>
+                    <AmountProduct>{product.amount}x</AmountProduct>
+                    <ValueProduct>${product.price}</ValueProduct>
                     <ButtonsAmount>
                         <button>+</button>
-                        <h4>2</h4>
+                        <h4>{product.amount}</h4>
                         <button>-</button>
                      </ButtonsAmount>
             </ProductDatas>
-        </ContainerPorduct>
-        )
+        </ContainerPorduct>)})
+        
     }
 
     return(
         <Wrapper>
-            <Amount>3 Itens</Amount>
+            <Amount>{itens} Itens</Amount>
             <TextoCart>Carrinho de compras</TextoCart>
                 <ContainerPorducts>
                   <Product/>
                 </ContainerPorducts>
                 <Footer>
-                    <h2>Total: R$1959,00</h2>
+                    <h2>Total: R${valorTotal}</h2>
                     <button>checkout</button>
                 </Footer>
         </Wrapper>
@@ -194,6 +202,7 @@ const Footer = styled.div`
         font-family: 'MedievalSharp', cursive;
         background: #FFFFFF;
         box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
+        z-index: 1;
 
         button{
             margin-right:15px;

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = "https://http://localhost:5001"
+const BASE_URL = "http://localhost:5001"
 
  //taverna-online-api.onrender.com
 
@@ -15,7 +15,6 @@ function creatHeaders(){
   return config
 };
 
-
 function postSignIn(body) {
     const promise = axios.post(`${BASE_URL}/sign-in`,body);
     return promise;
@@ -26,11 +25,12 @@ function postSignUp(body){
       return promise;
   }
 
-function getCart(){
+function getCart(body){
   const config = creatHeaders();
-  const promise = axios.post(`${BASE_URL}/cart`, config)
+  const promise = axios.get(`${BASE_URL}/cart`, config)
+  console.log('getCart', promise, config)
   return promise;
-}  
+};
 
 
 export {
