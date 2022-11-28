@@ -45,13 +45,17 @@ export default function SignInPage(){
             const response = await postSignIn(body);
             setToken(response.data.token);
             console.log('deu bom', response);
+            localStorage.setItem('tavernaOnline', JSON.stringify({token: response.data.token}));
+            const auth = JSON.parse(localStorage.getItem("tavernaOnline"));
+            console.log('login', auth.token)
             navigate('/');
              setForm({ 
                 email: '',
                 password:''
                 })
-        }catch({response}){
-            alert(response.data.message);
+        }catch(error){
+            console.log('deu ruin', error)
+            alert(error);
             setLoading(false);
             setDesibled(false)
         }
