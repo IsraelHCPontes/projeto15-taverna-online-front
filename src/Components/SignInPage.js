@@ -52,9 +52,9 @@ export default function SignInPage(){
                 email: '',
                 password:''
                 })
-        }catch(error){
-            console.log('deu ruin', error)
-            alert(error);
+        }catch({response}){
+            console.log('deu ruin', response.data.message)
+            alert(response.data.message);
             setLoading(false);
             setDesibled(false)
         }
